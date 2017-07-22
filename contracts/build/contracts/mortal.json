@@ -1,0 +1,43 @@
+{
+  "contract_name": "mortal",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "kill",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "tranferOwnership",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x60606040525b60008054600160a060020a03191633600160a060020a03161790555b5b610129806100316000396000f300606060405263ffffffff60e060020a60003504166341c0e1b58114603457806383fc58b41460435780638da5cb5b14605e575bfe5b3415603b57fe5b60416087565b005b3415604a57fe5b6041600160a060020a036004351660b3565b005b3415606557fe5b606b60ee565b60408051600160a060020a039092168252519081900360200190f35b60005433600160a060020a0390811691161460a25760006000fd5b600054600160a060020a0316ff5b5b565b60005433600160a060020a0390811691161460ce5760006000fd5b60008054600160a060020a031916600160a060020a0383161790555b5b50565b600054600160a060020a0316815600a165627a7a723058202810e2f78fb4cefd82552d5c381eb56f9648e2014c0cb163b6725936c3ff9cf90029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1500490580353
+}
