@@ -40,6 +40,13 @@ contract HolyCoin is ERC20Token, owned, mortal {
   mapping(address => uint256) balances;
 	mapping(address => mapping(address => uint256)) allowances;
 
+  function () payable {
+   uint256 _amount = msg.value / price;
+   require(balances[this] >= _amount);
+   balances[this] -= _amount;
+   balances[msg.sender] += _amount;
+  }
+
   function HolyCoin() {
     uint256 initialSupply = 1000000000;
     price = 1;
@@ -85,10 +92,7 @@ contract HolyCoin is ERC20Token, owned, mortal {
   	return allowances[_owner][_spender];
   }
 
-  function buy() payable {
-   uint256 _amount = msg.value / price;
-   require(balances[this] >= _amount);
-   balances[this] -= _amount;
-   balances[msg.sender] += _amount;
+  function bless(address _to, uint256 _value) returns (bool success) {
+    return (transfer(_to, _value));
   }
 }
