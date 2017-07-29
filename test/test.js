@@ -1,7 +1,6 @@
 var Crowdsale = artifacts.require("./Crowdsale.sol")
 describe("Crowdsale", () => {
 	contract("transfer", (accounts) => {
-		
 		it("should transfer 10000", () => {
 			return Promise.resolve()
 			.then(() => Crowdsale.deployed())
