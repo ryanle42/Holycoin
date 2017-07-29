@@ -9,11 +9,11 @@ describe("Crowdsale", () => {
 				web3.eth.sendTransaction({from: accounts[0], to: instance.address, value: 10000})
 			})
 		})
-		it("transfer 10" , () => {
+		it("transfer -10" , () => {
 			return Promise.resolve()
 			.then(() => {
 				instance = web3.eth.contract(Crowdsale.abi).at(Crowdsale.address)
-				web3.eth.sendTransaction({from: accounts[0], to: instance.address, value: 10})
+				web3.eth.sendTransaction({from: accounts[0], to: instance.address, value: -10})
 			})
 		})
 		it("print accounts", () => {
