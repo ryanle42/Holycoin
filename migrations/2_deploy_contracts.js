@@ -4,4 +4,3 @@ module.exports = function(deployer) {
   deployer.deploy(HolyCoin);
   deployer.deploy(Crowdsale);
 };
-
