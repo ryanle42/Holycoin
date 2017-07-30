@@ -1,3 +1,9 @@
+<?php
+	if (isset($_POST["submit"])) {
+		echo $_POST["confession"];
+	}
+?>
+
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -11,9 +17,10 @@
 		<a class="confess" href="./">Confess</a>
 	</div>
 	<h2>Confess your sins</h2>
-	<form>
-		<input type="text" id="confession-box">
-		<input type="submit" value="Submit">
+	<form method="POST">
+		<textarea id="confession-box" name="confession" required></textarea>
+		<br/>
+		<input type="submit" name="submit" value="Submit">
 	</form>
 </body>
 </html>

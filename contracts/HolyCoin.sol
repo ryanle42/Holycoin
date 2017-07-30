@@ -36,17 +36,13 @@ contract mortal is owned{
 
 contract HolyCoin is ERC20Token, owned, mortal {
   uint256 buyPrice;
-  uint256 spotsInHeaven;
   uint256 totalSupply;
 
   mapping(address => uint256) balances;
   mapping(address => uint256) indulgences;
-  mapping(address => bytes32) confessions;
-  mapping(address => string) names;
   mapping(address => mapping(address => uint256)) private allowances;
 
   event Indulgence(address indexed _from, uint256 _value);
-  event Confession(address indexed _from, bytes32 _confession);
 
   function () payable {
     uint256 _amount;
@@ -107,10 +103,6 @@ contract HolyCoin is ERC20Token, owned, mortal {
     indulgences[msg.sender] += _amount;
     Indulgence(msg.sender, _amount);
     return true;
-  }
-
-  function confess(bytes32 _confession) {
-    Confession(msg.sender, _confession);
   }
 }
 

@@ -11,8 +11,8 @@
 		<a class="confess" href="../confess">Confess</a>
 	</div>
 	<h2>Pay your indulgence</h2>
-	<form>
-		<input type="number">
+	<form method="POST">
+		<input type="number" min="0">
 		<input type="submit" value="Submit">
 	</form>
 </body>

@@ -4,8 +4,14 @@
 }
 
 #confession-box {
-	width: 20em;
-	height: 20em;
+	width: 30em;
+    height: 10em;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
 }
 
 a.home {
