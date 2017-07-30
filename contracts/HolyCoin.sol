@@ -100,6 +100,7 @@ contract HolyCoin is ERC20Token, owned, mortal {
     return allowances[_owner][_spender];
   }
 
+  // burns holycoin for indulgence
   function giveIndulgence(uint256 _amount) returns (bool _success) {
     require(balances[msg.sender] >= _amount);
     balances[msg.sender] -= _amount;
