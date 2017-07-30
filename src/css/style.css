@@ -1,0 +1,39 @@
+#address {
+	text-decoration: underline;
+	color: black;
+}
+
+#confession-box {
+	width: 20em;
+	height: 20em;
+}
+
+a.home {
+	text-decoration: none;
+	color: black;
+}
+
+a.indulgences {
+	text-decoration: none;
+	color: black;
+	font-size: 1.3em;	
+}
+
+a.confess {
+	text-decoration: none;
+	color: black;
+	font-size: 1.3em;
+	padding-left: 5em;
+}
+
+.header {
+	text-align: center;
+	padding-top: .4em;
+}
+
+.send {
+	font-size: 2.4em;
+	text-align: center;
+	padding-top: 2em;
+	padding-bottom: 1.5em;
+}
