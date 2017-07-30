@@ -76,10 +76,10 @@
     "default": {
       "links": {},
       "events": {},
-      "updated_at": 1500796648587,
-      "address": "0x3d0f92c5d12a8071d763b5084551331e7ac968c5"
+      "updated_at": 1501360330082,
+      "address": "0xf70a03a83e7ccea084a9feccbe4e0d4f7da00ff2"
     }
   },
   "schema_version": "0.0.5",
-  "updated_at": 1500796648587
+  "updated_at": 1501360330082
 }

@@ -36,34 +36,36 @@ contract mortal is owned{
 
 contract HolyCoin is ERC20Token, owned, mortal {
   uint256 buyPrice;
-  uint256 sellPrice;
-  uint256 totalEth;
+  uint256 spotsInHeaven;
+  uint256 totalSupply;
+
   mapping(address => uint256) balances;
+  mapping(address => uint256) indulgences;
+  mapping(address => bytes32) confessions;
+  mapping(address => string) names;
   mapping(address => mapping(address => uint256)) private allowances;
+
+  event Indulgence(address indexed _from, uint256 _value);
+  event Confession(address indexed _from, bytes32 _confession);
 
   function () payable {
     uint256 _amount;
     _amount = msg.value / buyPrice;
-    require(balances[this] >= _amount);
     require(balances[msg.sender] < balances[msg.sender] + _amount);
-    require(totalEth + msg.value < 1 ether);
-    totalEth += msg.value;
-    balances[this] -= _amount;
+    totalSupply += _amount;
     balances[msg.sender] += _amount;
     Transfer(this, msg.sender, _amount);
   }
 
   function HolyCoin() {
-    totalSupply = 1000000000;
     buyPrice = 1;
-    balances[this] = totalSupply;
   }
 
-  function balanceOf(address _owner) constant returns (uint256 balance) {
+  function balanceOf(address _owner) constant returns (uint256 _balance) {
     return (balances[_owner]);
   }
 
-  function transfer(address _to, uint256 _value) returns (bool success) {
+  function transfer(address _to, uint256 _value) returns (bool _success) {
     require(balances[msg.sender] >= _value);
     require(balances[_to] < balances[_to] + _value);
     balances[msg.sender] -= _value;
@@ -85,7 +87,7 @@ contract HolyCoin is ERC20Token, owned, mortal {
     return true;
   }
   
-  function approve(address _spender, uint256 _value) returns (bool success) {
+  function approve(address _spender, uint256 _value) returns (bool _success) {
     allowances[msg.sender][_spender] = _value;
     Approval(msg.sender, _spender, _value);
     return true;
@@ -98,4 +100,16 @@ contract HolyCoin is ERC20Token, owned, mortal {
     return allowances[_owner][_spender];
   }
 
+  function giveIndulgence(uint256 _amount) returns (bool _success) {
+    require(balances[msg.sender] >= _amount);
+    balances[msg.sender] -= _amount;
+    indulgences[msg.sender] += _amount;
+    Indulgence(msg.sender, _amount);
+    return true;
+  }
+
+  function confess(bytes32 _confession) {
+    Confession(msg.sender, _confession);
+  }
 }
+
