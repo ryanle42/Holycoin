@@ -22,24 +22,35 @@ a.home {
 a.indulgences {
 	text-decoration: none;
 	color: black;
-	font-size: 1.3em;	
+	font-size: 1.3em;
+	padding-left: 5vw;
 }
 
 a.confess {
 	text-decoration: none;
 	color: black;
 	font-size: 1.3em;
-	padding-left: 5em;
+	padding-left: 4vw;
 }
 
+.topIndulgences {
+	float: left;
+	margin: auto;
+}
+
+.topConfessions {
+	float: right;
+	margin: auto;
+}
 .header {
-	text-align: center;
 	padding-top: .4em;
+	margin: auto;
 }
 
 .send {
 	font-size: 2.4em;
-	text-align: center;
-	padding-top: 2em;
+	padding-left: 5vw;
+	padding-top: 1.1em;
 	padding-bottom: 1.5em;
+	margin: auto;
 }
